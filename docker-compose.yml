@@ -1,0 +1,16 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+      - ./corporate-ca.pem:/usr/local/share/ca-certificates/corporate-ca.crt
+      - vscode_extensions:/root/.vscode-server/extensions
+    stdin_open: true
+    tty: true
+
+volumes:
+  vscode_extensions:

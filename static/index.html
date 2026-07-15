@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escalation Approvals Dashboard</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f5f5; color: #333; }
+
+    header { background: #1a1a2e; color: white; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; }
+    header h1 { font-size: 1.25rem; font-weight: 600; }
+    header span { font-size: 0.85rem; opacity: 0.6; }
+
+    main { max-width: 1100px; margin: 32px auto; padding: 0 24px; }
+
+    .toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .toolbar h2 { font-size: 1rem; font-weight: 600; color: #555; }
+    #refresh-btn { background: #1a1a2e; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    #refresh-btn:hover { background: #16213e; }
+
+    #status-msg { margin-bottom: 12px; font-size: 0.875rem; color: #2d6a4f; min-height: 20px; }
+
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+    th { background: #f0f0f0; text-align: left; padding: 12px 16px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #666; }
+    td { padding: 14px 16px; border-top: 1px solid #eee; font-size: 0.9rem; vertical-align: top; }
+    tr:hover td { background: #fafafa; }
+
+    .draft-preview { max-width: 300px; font-size: 0.8rem; color: #666; white-space: pre-wrap; max-height: 80px; overflow-y: auto; background: #f9f9f9; border-radius: 4px; padding: 8px; }
+    .amount { font-weight: 700; color: #c0392b; }
+
+    .btn { border: none; padding: 7px 14px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: opacity 0.15s; }
+    .btn:hover { opacity: 0.85; }
+    .btn-approve { background: #2d6a4f; color: white; margin-right: 6px; }
+    .btn-reject  { background: #c0392b; color: white; }
+
+    #empty-msg { text-align: center; padding: 48px; color: #aaa; font-size: 0.95rem; display: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Escalation Approvals Dashboard</h1>
+  <span id="auto-refresh-label">Auto-refreshing every 5s</span>
+</header>
+
+<main>
+  <div class="toolbar">
+    <h2>Pending Approvals</h2>
+    <button id="refresh-btn" onclick="fetchPending()">Refresh Now</button>
+  </div>
+
+  <div id="status-msg"></div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Ticket ID</th>
+        <th>Customer</th>
+        <th>Category</th>
+        <th>Action</th>
+        <th>Draft Email</th>
+        <th>Decision</th>
+      </tr>
+    </thead>
+    <tbody id="ticket-rows"></tbody>
+  </table>
+  <div id="empty-msg">No tickets pending approval.</div>
+</main>
+
+<script>
+  async function fetchPending() {
+    const res = await fetch('/api/pending');
+    const tickets = await res.json();
+    const tbody = document.getElementById('ticket-rows');
+    const emptyMsg = document.getElementById('empty-msg');
+
+    tbody.innerHTML = '';
+
+    if (tickets.length === 0) {
+      emptyMsg.style.display = 'block';
+      return;
+    }
+
+    emptyMsg.style.display = 'none';
+
+    tickets.forEach(t => {
+      const action = t.proposed_action || {};
+      const amount = action.amount ? `<span class="amount">$${action.amount.toFixed(2)}</span>` : '-';
+      const draft  = action.draft_email || '';
+
+      const tr = document.createElement('tr');
+      tr.id = `row-${t.ticket_id}`;
+      tr.innerHTML = `
+        <td><code>${t.ticket_id.slice(0, 8)}…</code></td>
+        <td>${t.customer_email}</td>
+        <td>${t.category}</td>
+        <td>${action.type || '-'}<br/>${amount}</td>
+        <td><div class="draft-preview">${draft}</div></td>
+        <td>
+          <button class="btn btn-approve" onclick="decide('${t.ticket_id}', true)">Approve</button>
+          <button class="btn btn-reject"  onclick="decide('${t.ticket_id}', false)">Reject</button>
+        </td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  async function decide(ticketId, approved) {
+    const statusEl = document.getElementById('status-msg');
+    statusEl.textContent = `Submitting decision for ${ticketId.slice(0,8)}…`;
+
+    const res = await fetch(`/api/approve/${ticketId}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ approved }),
+    });
+
+    if (res.ok) {
+      const row = document.getElementById(`row-${ticketId}`);
+      if (row) row.remove();
+      statusEl.textContent = `Ticket ${ticketId.slice(0,8)}… ${approved ? 'approved' : 'rejected'} — resuming pipeline.`;
+    } else {
+      statusEl.style.color = '#c0392b';
+      statusEl.textContent = `Error: ${await res.text()}`;
+    }
+
+    // Check if table is now empty
+    if (document.getElementById('ticket-rows').children.length === 0) {
+      document.getElementById('empty-msg').style.display = 'block';
+    }
+  }
+
+  // Auto-refresh every 5 seconds
+  fetchPending();
+  // setInterval(fetchPending, 5000);
+</script>
+
+</body>
+</html>
