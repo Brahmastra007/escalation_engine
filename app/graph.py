@@ -1,15 +1,11 @@
 from langgraph.graph import StateGraph, START, END
-from langgraph.checkpoint.memory import MemorySaver
+from langgraph.checkpoint.base import BaseCheckpointSaver
 
 from app.state import TicketState
 from app.agents.triage import triage_node
 from app.agents.resolution import resolution_node
 from app.agents.human_review import human_review_node
 from app.agents.dispatcher import dispatcher_node
-
-# Module-level singleton — shared across all FastAPI requests.
-# MemorySaver holds all checkpoint state in a plain Python dict in memory.
-checkpointer = MemorySaver()
 
 
 def _needs_human_review(state: TicketState) -> str:
@@ -20,7 +16,7 @@ def _needs_human_review(state: TicketState) -> str:
     return "dispatcher"
 
 
-def build_graph():
+def build_graph(checkpointer: BaseCheckpointSaver):
     builder = StateGraph(TicketState)
 
     builder.add_node("triage",       triage_node)
@@ -38,7 +34,3 @@ def build_graph():
     builder.add_edge("dispatcher",   END)
 
     return builder.compile(checkpointer=checkpointer)
-
-
-# Compile once at import time — reused for every ticket
-graph = build_graph()
