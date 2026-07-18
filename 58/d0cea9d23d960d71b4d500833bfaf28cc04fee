@@ -1,0 +1,54 @@
+app/graph.py
+  s_d50343b9386fee::t_36ece4c6f1cac3 2,19
+requirements.txt
+  s_d50343b9386fee::t_3a3c78b90aa21e 2,10
+  s_d50343b9386fee::t_c5770ca889c165 11
+app/main.py
+  s_d50343b9386fee::t_869e3ff05eeae1 113-115
+  s_d50343b9386fee::t_3eb4c8980d17f1 123,146-151
+  s_6a0fc6045fe067::t_7ccc6fc3c7d1e6 22,28-30
+  s_d50343b9386fee::t_3da2c1e1b4f1d0 6
+  s_d50343b9386fee::t_06c1dad7642655 37,40-41,44-45
+  s_d50343b9386fee::t_f12ebbebbb3a8c 89,91-100
+  s_d50343b9386fee::t_3663d44e065c06 112
+  s_d50343b9386fee::t_a0b126accab6e8 152
+  s_d50343b9386fee::t_ff21da8a8a48bf 70,80,106,124,153,158-160,182-184,190
+  s_d50343b9386fee::t_14ba568d35942b 15-17
+  s_6a0fc6045fe067::t_492ca5e5f2fc48 194-198
+  s_d50343b9386fee::t_0d7c75d4bd6dbd 167-178
+  s_d50343b9386fee::t_1f02caf45cfc33 32-36,49
+  s_d50343b9386fee::t_6f9ad809152980 12,18,31,47-48,50,52
+  s_d50343b9386fee::t_a5e35ff5ababf1 10-11
+  s_6a0fc6045fe067::t_8f8cb63fb77c17 21
+  s_d50343b9386fee::t_b0c9233f3a6692 38-39
+  s_d50343b9386fee::t_b2aaf27e3e7b50 42-43
+  s_d50343b9386fee::t_a5dab3da259d29 46
+app/db.py
+  s_d50343b9386fee::t_488660981968f9 46-48
+  s_d50343b9386fee::t_c2f50408ce0e21 1-25,27-28,43-44,50
+  s_d50343b9386fee::t_89f234b137dde0 26,29-42,45,49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "58d0cea9d23d960d71b4d500833bfaf28cc04fee",
+  "prompts": {},
+  "sessions": {
+    "s_6a0fc6045fe067": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c942cc01-c779-4db7-b9a3-65550604b887",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Anirudha Singh Mertia <anirudha.mertia@coupa.com>"
+    },
+    "s_d50343b9386fee": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a545bc1b-7630-401d-b91f-4b29ce84991a",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Anirudha Singh Mertia <anirudha.mertia@coupa.com>"
+    }
+  }
+}
