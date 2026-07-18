@@ -1,6 +1,6 @@
 {
   "name": "FastAPI Docker Dev",
-  "dockerComposeFile": "../docker-compose.yml",
+  "dockerComposeFile": "../docker-compose.dev.yml",
   "service": "api", // The name of your FastAPI service in docker-compose
   "workspaceFolder": "/app",
   "customizations": {

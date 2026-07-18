@@ -1,0 +1,13 @@
+.git
+.gitignore
+.env
+corporate-ca.pem
+.vscode/
+.devcontainer/
+.claude/
+__pycache__/
+*.pyc
+DEPLOYMENT_PLAN.md
+README.md
+docker-compose*.yml
+Dockerfile

@@ -3,3 +3,4 @@ corporate-ca.pem
 __pycache__/
 *.pyc
 .venv/
+.claude/

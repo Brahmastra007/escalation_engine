@@ -1,0 +1,40 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: escalation
+      POSTGRES_PASSWORD: escalation
+      POSTGRES_DB: escalation
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U escalation"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: "postgresql://escalation:escalation@postgres:5432/escalation"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - ./corporate-ca.pem:/usr/local/share/ca-certificates/corporate-ca.crt
+      - vscode_extensions:/root/.vscode-server/extensions
+    stdin_open: true
+    tty: true
+
+volumes:
+  postgres_data:
+  vscode_extensions:
