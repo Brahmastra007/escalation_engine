@@ -1,0 +1,34 @@
+Dockerfile
+  s_6a0fc6045fe067::t_6a483cf4cba2f0 1,14-16
+  s_6a0fc6045fe067::t_e400f4b769c55b 18
+  s_6a0fc6045fe067::t_c78a0a7bd0193a 8-9,17
+.dockerignore
+  s_6a0fc6045fe067::t_de1fb20ceb1e38 1-11
+  s_6a0fc6045fe067::t_5fba80eab10ff9 12-13
+docker-compose.prod.yml
+  s_6a0fc6045fe067::t_89aa7eebdc4b03 2-17,26-30,37,40
+  s_6a0fc6045fe067::t_75b60f3e2850f0 31-36
+  s_6a0fc6045fe067::t_5cc7e9ea1077d3 19-21
+  s_6a0fc6045fe067::t_8111c2841606c5 1
+  s_6a0fc6045fe067::t_5706d573568a75 18
+  s_6a0fc6045fe067::t_631f6e06a7d682 22-25
+  s_6a0fc6045fe067::t_6119dbbe82d386 38-39
+docker-compose.dev.yml
+  s_6a0fc6045fe067::t_ca9ac4b2ecb4dd 2-17,19-21,26-30,39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "2d4c880586bc91db8e16d00eda42314b28590483",
+  "prompts": {},
+  "sessions": {
+    "s_6a0fc6045fe067": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c942cc01-c779-4db7-b9a3-65550604b887",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Anirudha Singh Mertia <anirudha.mertia@coupa.com>"
+    }
+  }
+}
