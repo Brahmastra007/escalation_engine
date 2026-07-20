@@ -1,7 +1,7 @@
 {
-  "name": "FastAPI Docker Dev",
-  "dockerComposeFile": "../docker-compose.dev.yml",
-  "service": "api", // The name of your FastAPI service in docker-compose
+  "name": "Escalation Engine - API",
+  "dockerComposeFile": "../../docker-compose.dev.yml",
+  "service": "api",
   "workspaceFolder": "/app",
   "customizations": {
     "vscode": {

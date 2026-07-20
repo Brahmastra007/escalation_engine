@@ -17,24 +17,40 @@ services:
 
   api:
     build:
-      context: .
+      context: ./api
       target: dev
     ports:
       - "8000:8000"
     env_file:
-      - .env
+      - ./api/.env
     environment:
       DATABASE_URL: "postgresql://escalation:escalation@postgres:5432/escalation"
     depends_on:
       postgres:
         condition: service_healthy
     volumes:
-      - .:/app
+      - ./api:/app
       - ./corporate-ca.pem:/usr/local/share/ca-certificates/corporate-ca.crt
-      - vscode_extensions:/root/.vscode-server/extensions
+      - api_vscode_extensions:/root/.vscode-server/extensions
+    stdin_open: true
+    tty: true
+
+  frontend:
+    build:
+      context: ./frontend
+      target: dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - frontend_vscode_extensions:/root/.vscode-server/extensions
+    depends_on:
+      - api
     stdin_open: true
     tty: true
 
 volumes:
   postgres_data:
-  vscode_extensions:
+  api_vscode_extensions:
+  frontend_vscode_extensions:

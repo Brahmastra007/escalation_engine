@@ -1,0 +1,20 @@
+{
+  "name": "Escalation Engine - Frontend",
+  "dockerComposeFile": "../../docker-compose.dev.yml",
+  "service": "frontend",
+  "workspaceFolder": "/app",
+  "overrideCommand": false,
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+      }
+    }
+  }
+}
