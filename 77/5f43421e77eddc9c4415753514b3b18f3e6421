@@ -1,0 +1,121 @@
+frontend/tsconfig.node.json
+  s_1e575244dbac55::t_053b1136aeae57 1-23
+frontend/.devcontainer/devcontainer.json
+  s_1e575244dbac55::t_62aa34ca435c4c 6
+  s_1e575244dbac55::t_3e3a3995621177 1-5,7-20
+frontend/vite.config.ts
+  s_1e575244dbac55::t_06b0839d504486 3,6
+  s_1e575244dbac55::t_053b1136aeae57 1-2,4-5,17
+  s_1e575244dbac55::t_22b885a595f290 7-16
+frontend/.gitignore
+  s_1e575244dbac55::t_053b1136aeae57 1-24
+frontend/src/App.tsx
+  s_1e575244dbac55::t_6c433710fa87b7 8-9,28-29
+  s_1e575244dbac55::t_053b1136aeae57 12-14,36-37
+  s_1e575244dbac55::t_25305f91ca26e6 1-7,10-11,15-27,30-34
+  s_1e575244dbac55::t_79b77ab9c2fdc4 35
+  s_1e575244dbac55::t_ec77f25d8f8e3d 38
+frontend/src/components/ProtectedRoute.tsx
+  s_1e575244dbac55::t_b79388cd8e12bc 1-20
+frontend/Dockerfile
+  s_1e575244dbac55::t_83ca8fb8f8e684 1-26
+frontend/src/types.ts
+  s_1e575244dbac55::t_77f8032ae62b0d 1-52
+frontend/src/api/client.ts
+  s_1e575244dbac55::t_9e31f67b249939 1-28
+docker-compose.prod.yml
+  s_1e575244dbac55::t_7a4ed1871c87a8 20
+  s_1e575244dbac55::t_2d2cc11be5ff13 25
+frontend/src/pages/Login.tsx
+  s_1e575244dbac55::t_17c9e9ef4d66f0 1-76
+frontend/nginx.conf
+  s_1e575244dbac55::t_153195ac7e2769 1-18
+frontend/src/components/Layout.tsx
+  s_1e575244dbac55::t_46b366945de850 1-38
+frontend/.oxlintrc.json
+  s_1e575244dbac55::t_053b1136aeae57 1-8
+frontend/README.md
+  s_1e575244dbac55::t_053b1136aeae57 1-32
+frontend/public/favicon.svg
+  s_1e575244dbac55::t_053b1136aeae57 1
+frontend/src/pages/SubmitTicket.tsx
+  s_1e575244dbac55::t_3316ccc9985817 1-86
+.gitignore
+  s_1e575244dbac55::t_0e680433e3f527 5-6,9
+  s_1e575244dbac55::t_8e9799f8e3297e 4,10-13
+frontend/src/pages/Dashboard.tsx
+  s_1e575244dbac55::t_478e3fb3b1e846 1-112
+frontend/src/pages/TicketDetail.tsx
+  s_1e575244dbac55::t_9784e5304f0dc0 1-121
+frontend/src/api/tickets.ts
+  s_1e575244dbac55::t_e72b3597a59db4 1-39
+frontend/package.json
+  s_1e575244dbac55::t_24f9af7885162a 14-17
+  s_1e575244dbac55::t_053b1136aeae57 1-13,18-23,26-30
+  s_1e575244dbac55::t_2bc74549697fd1 24-25
+docker-compose.dev.yml
+  s_1e575244dbac55::t_90768dc703171d 47
+  s_1e575244dbac55::t_80d6cbaf35f1fc 20,32
+  s_1e575244dbac55::t_96ab4f767ef1a5 38-45,48-49
+  s_1e575244dbac55::t_7377a860921e16 56
+  s_1e575244dbac55::t_66cd46e3d44807 25
+  s_1e575244dbac55::t_d3887fa428053f 35-37
+  s_1e575244dbac55::t_0c82a658f044cc 46
+  s_1e575244dbac55::t_a07e37046735ff 55
+frontend/tsconfig.app.json
+  s_1e575244dbac55::t_053b1136aeae57 1-26
+frontend/.dockerignore
+  s_1e575244dbac55::t_d40e0f0611d567 1-4
+frontend/src/api/auth.ts
+  s_1e575244dbac55::t_ad23c1e99bc52c 1-18
+frontend/src/context/AuthContext.tsx
+  s_1e575244dbac55::t_b00f3a2380cc8a 1-64
+frontend/src/index.css
+  s_1e575244dbac55::t_2176a4b31d5089 1
+frontend/index.html
+  s_1e575244dbac55::t_053b1136aeae57 1-13
+api/.devcontainer/devcontainer.json
+  s_1e575244dbac55::t_e3176653673c27 2-4
+frontend/tsconfig.json
+  s_1e575244dbac55::t_053b1136aeae57 1-7
+frontend/src/main.tsx
+  s_1e575244dbac55::t_053b1136aeae57 1-10
+frontend/public/icons.svg
+  s_1e575244dbac55::t_053b1136aeae57 1-24
+api/requirements.txt
+  s_1e575244dbac55::t_30013c03991ef1 12-13
+api/app/auth.py
+  s_1e575244dbac55::t_73ced8f8b07484 1-56
+api/app/db.py
+  s_1e575244dbac55::t_93176958af9920 2,13-23
+api/app/main.py
+  s_1e575244dbac55::t_a3625c59435d00 6-7,17-18,23-37,48,50,73-80,88-91,117,120,125,148-167,170,205,214,229
+plans/DEPLOYMENT_PLAN.md
+  s_b5d56fba7e290e::t_f950dc0f73202f 1-112
+plans/FRONTEND_PLAN.md
+  s_1e575244dbac55::t_64c53fb2d60746 1-195
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "775f43421e77eddc9c4415753514b3b18f3e6421",
+  "prompts": {},
+  "sessions": {
+    "s_1e575244dbac55": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c4b7fa65-4dc5-463a-820e-f5ef6082bc62",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Anirudha Singh Mertia <anirudha.mertia@coupa.com>"
+    },
+    "s_b5d56fba7e290e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e367fe03-aa55-4093-b0fa-cc9a04c649ca",
+        "model": "unknown"
+      },
+      "human_author": "Anirudha Singh Mertia <anirudha.mertia@coupa.com>"
+    }
+  }
+}
