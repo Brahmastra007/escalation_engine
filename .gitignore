@@ -2,6 +2,7 @@
 .env
 corporate-ca.pem
 .claude/
+sessions
 
 # API
 __pycache__/

@@ -2,3 +2,5 @@ __pycache__/
 *.pyc
 .devcontainer
 .vscode
+.env
+README.md
