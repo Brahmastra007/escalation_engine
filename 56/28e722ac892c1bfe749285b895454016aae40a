@@ -1,0 +1,76 @@
+docs/SESSION_3_NOTES.md
+  s_6a0fc6045fe067::t_fe91ed11da35fe 1-82
+api/Dockerfile
+  s_2b4572a17f238f::t_271562e0a5b5cf 18
+api/.dockerignore
+  s_2b4572a17f238f::t_579205c400b6b1 5
+  s_2b4572a17f238f::t_eeedf9f6f46d00 6
+frontend/Dockerfile
+  s_2b4572a17f238f::t_64a41caed6f8c4 13
+docs/SESSION_4_NOTES.md
+  s_1e575244dbac55::t_b6407bf834e686 1-172
+docs/SESSION_2_NOTES.md
+  s_d50343b9386fee::t_ac2afb8c1f9462 1-78
+docs/SESSION_5_NOTES.md
+  s_2b4572a17f238f::t_07bcb9b5bc6c9d 1-179
+docs/SESSION_1_NOTES.md
+  s_b5d56fba7e290e::t_ac78c1b50ee602 1-140
+docs/initial-build-(session-1).txt
+  s_b5d56fba7e290e::t_1a8a25cff8598a 1-2924
+docs/production-hardening-(session-3).txt
+  s_6a0fc6045fe067::t_81c71c517cb608 1-616
+docs/replace-MemorySaver-with-PostgreSQL-(session-2).txt
+  s_d50343b9386fee::t_df9a53e7cefb69 1-1911
+plans/AWS_DEPLOYMENT_(S5).md
+  s_2b4572a17f238f::t_eb710d6cfa8e99 1-455
+plans/AWS_DEPLOYMENT_CONSOLE_(S5).md
+  s_2b4572a17f238f::t_c189849c86a82d 1-520
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "5628e722ac892c1bfe749285b895454016aae40a",
+  "prompts": {},
+  "sessions": {
+    "s_1e575244dbac55": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c4b7fa65-4dc5-463a-820e-f5ef6082bc62",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Anirudha Singh Mertia <anirudha.mertia@coupa.com>"
+    },
+    "s_2b4572a17f238f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "100ff814-9b59-4d4d-ac94-cebd7ca511d2",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Anirudha Singh Mertia <anirudha.mertia@coupa.com>"
+    },
+    "s_6a0fc6045fe067": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c942cc01-c779-4db7-b9a3-65550604b887",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Anirudha Singh Mertia <anirudha.mertia@coupa.com>"
+    },
+    "s_b5d56fba7e290e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e367fe03-aa55-4093-b0fa-cc9a04c649ca",
+        "model": "unknown"
+      },
+      "human_author": "Anirudha Singh Mertia <anirudha.mertia@coupa.com>"
+    },
+    "s_d50343b9386fee": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a545bc1b-7630-401d-b91f-4b29ce84991a",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Anirudha Singh Mertia <anirudha.mertia@coupa.com>"
+    }
+  }
+}
